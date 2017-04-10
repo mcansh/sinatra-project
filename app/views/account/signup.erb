@@ -1,0 +1,22 @@
+<h1>Sign up</h1>
+<form method="post" action="/signup">
+  <fieldset>
+    <label for="username">Username</label>
+    <input id="username" type="text" name="username" required>
+  </fieldset>
+  <fieldset>
+    <label for="email" for>Email</label>
+    <input id="email" type="email" name="email" required>
+  </fieldset>
+  <fieldset>
+    <label for="password" for>Password</label>
+    <div class="pass-wrap">
+      <input id="password" type="password" name="password" required autocomplete="off" min="8">
+      <div id="revealpass" title="show password">
+        <svg id="eye"><use xlink:href="/img/sprite.svg#eye"></use></svg>
+      </div>
+    </div>
+  </fieldset>
+  <fieldset>
+    <input type="submit" value="Sign up">
+  </fieldset>

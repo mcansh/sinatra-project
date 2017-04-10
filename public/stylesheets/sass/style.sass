@@ -1,0 +1,114 @@
+@import "0-base/base"
+
+*
+  margin: 0
+  box-sizing: border-box
+  *:not(strong)
+    font-weight: 300
+
+h1,h2,h3,h4,h5,h6
+  margin: 0
+
+$main: #0474F3
+$error: #E53A40
+
+body
+  font-family: $font
+  min-height: 100vh
+  &#home
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-direction: column
+    background: $main
+    color: white
+    #logo
+      margin-bottom: rem(10px)
+      font-size: 3rem
+    a
+      color: rgba(white, 0.4)
+
+nav
+  padding: rem(30px) rem(20px)
+  display: flex
+  flex-direction: row
+  justify-content: center
+  align-items: center
+  height: 5rem
+  #logo
+    flex-grow: 1
+    a
+      margin: 0
+      font-weight: bold
+      color: $main
+
+  a
+    margin: 0 rem(10px)
+    text-decoration: none
+
+a
+  text-decoration: none
+
+.button
+  padding: rem(10px) rem(30px)
+  background: $main
+  border-radius: rem(100px)
+  color: white
+  transition: 300ms all ease-in-out
+  border: rem(1px) solid $main
+
+
+#content-wrapper
+  max-width: rem(1200px)
+  width: 90%
+  margin: 0 auto
+
+form
+  display: flex
+  max-width: rem(600px)
+  width: 100%
+  flex-direction: column
+  fieldset
+    border: 0
+    margin: rem(10px) 0
+    padding: 0
+    label
+      margin-bottom: 5px
+      display: block
+    input
+      display: inline-block
+      width: 100%
+      border: rem(1px) solid rgba(black, 0.4)
+      padding: rem(10px) rem(20px)
+      border-radius: rem(4px)
+      &[autocomplete="off"]::-webkit-credentials-auto-fill-button
+        padding: 0
+        visibility: hidden
+        +size(0)
+      &[type="submit"]
+        appearance: none
+        background: none
+        background: $main
+        color: white
+        transition: 300ms all ease-in-out
+        cursor: pointer
+        border: 0px
+        box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(black, 0.08)
+        &:hover
+          box-shadow: 0 4px 8px rgba(50, 50, 93, 0.2), 0 1px 3px rgba(black, 0.2)
+    .pass-wrap
+      position: relative
+      input:focus
+        svg
+          transform: translateX(-50px)
+    #revealpass
+      display: block
+      cursor: pointer
+      position: absolute
+      top: 50%
+      right: 20px
+      transform: translateY(-10px)
+      +size(20px)
+      svg
+        +size(100%)
+        fill: rgba(black, 0.4)
