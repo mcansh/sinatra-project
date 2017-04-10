@@ -9,27 +9,8 @@
     <link rel="shortcut icon" href="/img/favicon.ico">
     <link rel="stylesheet" href="/stylesheets/style.css">
   </head>
-  <body>
-    <nav>
-      <div id="logo">
-        <a href="/">TASK</a>
-      </div>
-      <% if logged_in? %>
-        <a href="/logout" class="button">Log Out</a>
-      <% else %>
-        <a href="/signin" class="button">Sign In</a>
-      <% end %>
-    </nav>
-    <div id="content-wrapper">
-      <%= yield %>
-    </div>
-    <% if logged_in? %>
-      <footer>
-        <a href="/tasks/new" class="button">New Task</a>
-      </footer>
-    <% end %>
-
-
+  <body id="<%= pageid %>">
+    <%= yield %>
     <script src="/js/bundle.js"></script>
   </body>
 </html>

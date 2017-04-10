@@ -1,0 +1,13 @@
+<h1>hello <%= @current_user.username %></h1>
+
+<div class="tasks-wrap">
+  <% @user_tasks.each do |task| %>
+    <div class="task-wrap">
+      <% if task.complete %>
+        <a class="done" href="/tasks/<%= task.id %>"><%= task.task %></a>
+      <% else %>
+        <a href="/tasks/<%= task.id %>"><%= task.task %></a>
+      <% end %>
+    </div>
+  <% end %>
+</div>
