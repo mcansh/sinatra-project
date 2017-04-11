@@ -17,5 +17,5 @@ group :development do
 end
 
 group :production do
-  gem 'gp'
+  gem 'pg'
 end
