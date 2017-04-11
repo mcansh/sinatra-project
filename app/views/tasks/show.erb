@@ -1,0 +1,12 @@
+<div class="tasks-wrap">
+  <div class="task-wrap">
+    <% if @task.complete %>
+      <a class="done" href="/tasks/<%= @task.id %>"><%= @task.task %></a>
+    <% else %>
+      <a href="/tasks/<%= @task.id %>"><%= @task.task %></a>
+    <% end %>
+  </div>
+</div>
+
+<a class="button" href="/tasks/<%= @task.id %>/edit">Edit Task</a>
+<a class="button" href="/tasks/<%= @task.id %>/delete">Delete Task</a>

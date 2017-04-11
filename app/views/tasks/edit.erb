@@ -1,0 +1,22 @@
+<% if @task && @task.errors %>
+  <div class="error">
+    <% @task.errors.full_messages.each do |error| %>
+      <p><%= error %></p>
+    <% end %>
+  </div>
+<% end %>
+
+<form action="/tasks/<%= @task.id %>" method="post">
+  <input type="hidden" name="_method" value="PUT">
+  <fieldset>
+    <label for="task">Task</label>
+    <input id="task" type="text" name="task[task]" value="<%= @task.task %>">
+  </fieldset>
+  <fieldset>
+    <label for="complete">Complete?</label>
+    <input id="complete" type="checkbox" name="task[complete]" <%= 'checked' if @task.complete == true %>>
+  </fieldset>
+  <fieldset>
+    <input type="submit" value="Update Task">
+  </fieldset>
+</form>

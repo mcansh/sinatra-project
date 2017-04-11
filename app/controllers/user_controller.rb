@@ -9,7 +9,7 @@ class UserController < ApplicationController
       session[:user_id] = user.id
       redirect to '/'
     else
-      redirect to 'signup'
+      erb :'account/signup', :layout => :layout
     end
   end
 
@@ -27,7 +27,7 @@ class UserController < ApplicationController
       session[:user_id] = user.id
       redirect to '/'
     else
-      redirect to '/signup'
+      erb :'account/signin', :layout => :layout
     end
   end
 

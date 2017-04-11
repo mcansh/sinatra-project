@@ -1,4 +1,13 @@
 <h1>Sign in</h1>
+
+<% if @user && @user.errors %>
+  <div class="error">
+    <% @user.errors.full_messages.each do |error| %>
+      <p><%= error %></p>
+    <% end %>
+  </div>
+<% end %>
+
 <form method="post" action="/signin">
   <fieldset>
     <label for="username">Username or email</label>

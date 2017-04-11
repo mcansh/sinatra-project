@@ -15,9 +15,10 @@ $error: #E53A40
 body
   font-family: $font
   min-height: 100vh
-  max-width: rem(1200px)
+  max-width: 1200px
   width: 90%
   margin: 0 auto
+  position: relative
   &#home
     display: flex
     justify-content: center
@@ -26,13 +27,12 @@ body
     background: $main
     color: white
     #logo
-      margin-bottom: rem(10px)
+      margin-bottom: 10px
       font-size: 3rem
     a
       color: rgba(white, 0.4)
 
 nav
-  padding: rem(30px) 0
   display: flex
   flex-direction: row
   justify-content: center
@@ -51,12 +51,16 @@ a
     text-decoration: line-through
 
 .button
-  padding: rem(10px) rem(30px)
+  display: inline-block
+  padding: 10px 30px
   background: $main
-  border-radius: rem(100px)
+  border-radius: 100px
   color: white
   transition: 300ms all ease-in-out
-  border: rem(1px) solid $main
+  border: 1px solid $main
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(black, 0.08)
+  &:hover
+    box-shadow: 0 4px 8px rgba(50, 50, 93, 0.2), 0 1px 3px rgba(black, 0.2)
 
 
 #content-wrapper
@@ -64,12 +68,12 @@ a
 
 form
   display: flex
-  max-width: rem(600px)
+  max-width: 600px
   width: 100%
   flex-direction: column
   fieldset
     border: 0
-    margin: rem(10px) 0
+    margin: 10px 0
     padding: 0
     label
       margin-bottom: 5px
@@ -77,9 +81,9 @@ form
     input
       display: inline-block
       width: 100%
-      border: rem(1px) solid rgba(black, 0.4)
-      padding: rem(10px) rem(20px)
-      border-radius: rem(4px)
+      border: 1px solid rgba(black, 0.4)
+      padding: 10px 20px
+      border-radius: 4px
       &[autocomplete="off"]::-webkit-credentials-auto-fill-button
         padding: 0
         visibility: hidden
@@ -119,11 +123,37 @@ footer
   bottom: 0
   left: 0
   right: 0
-  padding: rem(30px) rem(20px)
   display: flex
   justify-content: flex-end
   align-items: center
-
+  max-width: 1200px
+  width: 90%
+  margin: 0 auto
+  .button
+    border-radius: 50%
+    padding: 0
+    +size(40px)
+    display: flex
+    justify-content: center
+    align-items: center
+    position: relative
+    flex-direction: row
+    span
+      +size(100%)
+      display: flex
+      justify-content: center
+      align-items: center
+      position: relative
+      &::before, &::after
+        content: ''
+        background: white
+        position: absolute
+      &::before
+        width: 20px
+        height: 1px
+      &::after
+        width: 1px
+        height: 20px
 
 .tasks-wrap
   display: flex
@@ -131,3 +161,4 @@ footer
   align-items: center
   flex-direction: column
   height: 100%
+  padding: 0 0 50px 0
