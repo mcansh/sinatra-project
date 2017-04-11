@@ -9,6 +9,25 @@ function revealPass() {
     document.querySelector('#eye use').href.baseVal = '/img/sprite.svg#eye-off';
   }
 }
+
+// HACK
+function swapInputType() {
+  const email = this.value;
+  if (email.includes('@')) {
+    this.type = 'email';
+    this.name = 'email';
+  } else {
+    this.type = 'text';
+    this.name = 'username';
+  }
+  console.log(email);
+}
+
+if (location.pathname === '/signin') {
+  document.querySelector('#username').addEventListener('keyup', swapInputType);
+  document.querySelector('#username').addEventListener('focusout', swapInputType);
+}
+
 if (location.pathname === '/signup' || location.pathname === '/signin') {
   document.querySelector('#revealpass').addEventListener('click', revealPass);
 }
