@@ -12,11 +12,4 @@ gem 'rake'
 gem 'require_all'
 gem 'bcrypt'
 gem 'sass'
-
-group :development do
-  gem 'sqlite3'
-end
-
-group :production do
-  gem 'pg'
-end
+gem 'sqlite3'
