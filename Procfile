@@ -1,1 +1,1 @@
-bundle exec shotgun
+web: bundle exec shotgun
