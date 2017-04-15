@@ -1,5 +1,5 @@
 class TaskController < ApplicationController
-  get '/tasks' do
+  get '/tasks/?' do
     if logged_in?
       @user = User.find_by_id(params[:id])
       @user_tasks = @current_user.tasks
@@ -7,7 +7,7 @@ class TaskController < ApplicationController
     erb :'tasks/index'
   end
 
-  get '/tasks/new' do
+  get '/tasks/new/?' do
     if logged_in?
       erb :'tasks/new'
     else
@@ -28,7 +28,7 @@ class TaskController < ApplicationController
     end
   end
 
-  get '/tasks/:id' do
+  get '/tasks/:id/?' do
     if logged_in?
       @task = Task.find(params[:id])
       erb :'/tasks/show'
@@ -37,7 +37,7 @@ class TaskController < ApplicationController
     end
   end
 
-  get '/tasks/:id/edit' do
+  get '/tasks/:id/edit/?' do
     if logged_in?
       @task = Task.find(params[:id])
       erb :'/tasks/edit'
@@ -58,7 +58,7 @@ class TaskController < ApplicationController
     end
   end
 
-  delete '/tasks/:id/delete' do
+  get '/tasks/:id/delete' do
     if logged_in?
       @task = Task.delete(params[:id])
       redirect to '/tasks'
