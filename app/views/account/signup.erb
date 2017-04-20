@@ -1,13 +1,22 @@
 <h1>Sign up</h1>
 
+<% if @user.errors %>
+  <div class="error">
+    <% @user.errors.full_messages.each do |error| %>
+      <p><%= error %></p>
+    <% end %>
+  </div>
+<% end %>
+
+
 <form method="post" action="/signup">
   <fieldset>
     <label for="username">Username</label>
-    <input id="username" type="text" name="username" required>
+    <input id="username" type="text" name="username" required value="<%= @user.username %>">
   </fieldset>
   <fieldset>
     <label for="email" for>Email</label>
-    <input id="email" type="email" name="email" required>
+    <input id="email" type="email" name="email" required value="<%= @user.email %>">
   </fieldset>
   <fieldset>
     <label for="password" for>Password</label>

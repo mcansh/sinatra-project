@@ -29,17 +29,24 @@ class TaskController < ApplicationController
   end
 
   get '/tasks/:id/?' do
-    if logged_in?
-      @task = Task.find(params[:id])
+    redirect to '/signin' if !logged_in?
+    @task = Task.find_by(id: params[:id])
+    # if there is a task and that task belongs to the current user
+      # show the tasks/show
+    if @task && @task.user == current_user
       erb :'/tasks/show'
     else
       redirect to '/'
+      # redriect them to the root route
     end
+
   end
 
   get '/tasks/:id/edit/?' do
-    if logged_in?
-      @task = Task.find(params[:id])
+    redirect to '/signin' if !logged_in?
+    @task = Task.find_by(id: params[:id])
+
+    if @task && @task.user == current_user
       erb :'/tasks/edit'
     else
       redirect to '/'
@@ -47,21 +54,25 @@ class TaskController < ApplicationController
   end
 
   post '/tasks/:id' do
-    if logged_in?
-      @task = Task.find(params[:id])
+    redirect to '/signin' if !logged_in?
+    @task = Task.find_by(id: params[:id])
+    if @task && @task.user == current_user
       @task.update(params["task"])
-      if @task.save
-        redirect to "tasks/#{@task.id}"
-      else
-        erb :'/tasks/edit'
-      end
+      redirect to "/tasks/#{@task}"
+    else
+      redirect to '/'
     end
   end
 
   get '/tasks/:id/delete' do
-    if logged_in?
+    redirect to '/signin' if !logged_in?
+    @task = Task.find_by(id: params[:id])
+
+    if @task && @task.user == current_user
       @task = Task.delete(params[:id])
       redirect to '/tasks'
+    else
+      redirect to '/'
     end
   end
 end

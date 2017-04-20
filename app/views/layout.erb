@@ -20,12 +20,14 @@
       <% end %>
     </nav>
     <div id="content-wrapper">
+  
       <%= yield %>
+
     </div>
     <% if logged_in? %>
       <footer>
         <a href="/tasks/new" class="button" title="New Note">
-          <span></span>
+          <span>+</span>
         </a>
       </footer>
     <% end %>

@@ -2,7 +2,7 @@
 
 <div class="tasks-wrap">
   <% if @user_tasks.empty? %>
-    <h2><a class="button" href="/tasks/new">Create a Task</a></h2>
+    <h3 class="welcome"><a href="/tasks/new">Create your first task</a></h3>
   <% else %>
     <% @user_tasks.each do |task| %>
       <div class="task-wrap">
