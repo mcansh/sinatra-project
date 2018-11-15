@@ -6,19 +6,19 @@
   "main": "./js/main.js",
   "dependencies": {},
   "devDependencies": {
-    "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.4",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.4",
     "babel-polyfill": "^6.26.0",
     "babel-preset-es2015-native-modules": "^6.9.4",
-    "eslint": "^4.18.2",
-    "eslint-config-airbnb": "^16.1.0",
-    "eslint-config-airbnb-base": "^12.1.0",
-    "eslint-plugin-import": "^2.9.0",
+    "eslint": "^5.9.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0",
     "gulp": "^3.9.1",
-    "gulp-rename": "^1.2.2",
-    "gulp-svgmin": "^1.2.4",
-    "gulp-svgstore": "^6.1.1",
-    "webpack": "^4.1.1"
+    "gulp-rename": "^1.4.0",
+    "gulp-svgmin": "^2.1.0",
+    "gulp-svgstore": "^7.0.0",
+    "webpack": "^4.25.1"
   },
   "scripts": {
     "build": "webpack --progress --colors --watch"
